@@ -1,19 +1,27 @@
 {
   "name": "pennywise.ui.vue",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "apexcharts": "^3.45.2",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue3-apexcharts": "^1.4.4",
+    "vuetify": "^3.4.0-beta.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "typescript": "~4.5.5"
-  }
+  },
+  "description": "Personal Finance",
+  "main": "index.js",
+  "repository": "https://github.com/200Development/Pennywise.UI.Vue.git",
+  "author": "Ryan Parsons <ryanp6441@gmail.com>",
+  "license": "MIT"
 }
