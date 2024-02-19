@@ -7,7 +7,7 @@ import ExpensesTreemapGraph from '@/components/graphs/ExpensesTreemapGraph.vue';
 import NetWorthGraph from '@/components/graphs/NetWorthGraph.vue';
 import CashFlowGraph from '@/components/graphs/CashFlowGraph.vue';
 //import axios from 'axios';
-import SinkingFundsCard from '../cards/SinkingFundsCard.vue';
+import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
 
 /* async function getUserData () {
     try {
