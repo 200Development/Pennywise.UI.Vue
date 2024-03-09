@@ -49,14 +49,9 @@ import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
                 <v-sheet class="pa-3" elevation="2">
                     <v-row justify="center">
                         <v-col cols="8">
-                            <v-card class="graphCard">
-                                <v-card-title class="text-center">Expected Spending</v-card-title>
-                                <v-card-text>
-                                    <div>
-                                        <ExpectedSpendingGraph></ExpectedSpendingGraph>
-                                    </div>
-                                </v-card-text>
-                            </v-card>
+
+                            <ExpectedSpendingGraph></ExpectedSpendingGraph>
+
                         </v-col>
                     </v-row>
                 </v-sheet>
