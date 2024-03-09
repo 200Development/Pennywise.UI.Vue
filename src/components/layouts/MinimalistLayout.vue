@@ -7,6 +7,7 @@ import ExpensesTreemapGraph from '@/components/graphs/ExpensesTreemapGraph.vue';
 import NetWorthGraph from '@/components/graphs/NetWorthGraph.vue';
 import CashFlowGraph from '@/components/graphs/CashFlowGraph.vue';
 import ExpectedSpendingGraph from '../graphs/ExpectedSpendingGraph.vue';
+import SinkingFundsTable from '../tables/SinkingFundsTable.vue';
 //import axios from 'axios';
 import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
 
@@ -47,11 +48,12 @@ import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
                     </v-row>
                 </v-sheet>
                 <v-sheet class="pa-3" elevation="2">
-                    <v-row justify="center">
-                        <v-col cols="8">
-
+                    <v-row>
+                        <v-col cols="6">
                             <ExpectedSpendingGraph></ExpectedSpendingGraph>
-
+                        </v-col>
+                        <v-col cols="6">
+                            <SinkingFundsTable></SinkingFundsTable>
                         </v-col>
                     </v-row>
                 </v-sheet>
