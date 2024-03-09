@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppFooter from '@/components/AppFooter.vue';
-import SavingsCard from '@/components/cards/SavingsCard.vue';
+import CashFlowSnapshotCard from '@/components/cards/CashFlowSnapshotCard.vue';
 import OverheadCard from '@/components/cards/OverheadCard.vue';
 import MetricsCard from '@/components/cards/MetricsCard.vue';
 import ExpensesTreemapGraph from '@/components/graphs/ExpensesTreemapGraph.vue';
@@ -68,7 +68,7 @@ import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
                 <v-sheet class="pa-3" elevation="2">
                     <v-row justify="center">
                         <v-col cols="4">
-                            <SavingsCard></SavingsCard>
+                            <CashFlowSnapshotCard></CashFlowSnapshotCard>
                         </v-col>
                         <v-col cols="4">
                             <OverheadCard></OverheadCard>
