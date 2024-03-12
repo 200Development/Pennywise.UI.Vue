@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import AppFooter from '@/components/AppFooter.vue';
-import CashFlowSnapshotCard from '@/components/cards/CashFlowSnapshotCard.vue';
-import OverheadCard from '@/components/cards/OverheadCard.vue';
+import MonthlyCashFlowCard from '@/components/cards/MonthlyCashFlowCard.vue';
+import MonthlyOverheadCard from '@/components/cards/MonthlyOverheadCard.vue';
 import MetricsCard from '@/components/cards/MetricsCard.vue';
 import ExpensesTreemapGraph from '@/components/graphs/ExpensesTreemapGraph.vue';
 import NetWorthGraph from '@/components/graphs/NetWorthGraph.vue';
 import CashFlowGraph from '@/components/graphs/CashFlowGraph.vue';
-import ExpectedSpendingGraph from '../graphs/ExpectedSpendingGraph.vue';
-import SinkingFundsTable from '../tables/SinkingFundsTable.vue';
-import RequiredSavingsGraph from '../graphs/RequiredSavingsGraph.vue';
+import ExpectedSpendingGraph from '@/components/graphs/ExpectedSpendingGraph.vue';
+import SinkingFundsTable from '@/components/tables/SinkingFundsTable.vue';
+import RequiredSavingsGraph from '@/components/graphs/RequiredSavingsGraph.vue';
+import Budget from '@/components/Budget.vue';
 //import axios from 'axios';
 import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
 
@@ -63,15 +64,18 @@ import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
                         <v-col cols="4">
                             <RequiredSavingsGraph></RequiredSavingsGraph>
                         </v-col>
+                        <v-col cols="8">
+                            <Budget></Budget>
+                        </v-col>
                     </v-row>
                 </v-sheet>
                 <v-sheet class="pa-3" elevation="2">
                     <v-row justify="center">
                         <v-col cols="4">
-                            <CashFlowSnapshotCard></CashFlowSnapshotCard>
+                            <MonthlyCashFlowCard></MonthlyCashFlowCard>
                         </v-col>
                         <v-col cols="4">
-                            <OverheadCard></OverheadCard>
+                            <MonthlyOverheadCard></MonthlyOverheadCard>
                         </v-col>
                         <v-col cols="4">
                             <MetricsCard></MetricsCard>

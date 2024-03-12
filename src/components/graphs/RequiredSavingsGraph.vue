@@ -35,7 +35,7 @@ const series = computed(() => [
     data: requiredSavings.value
   },
   {
-    name: 'Current Savings',
+    name: 'Actual Savings',
     type: 'column',
     data: currentSavings.value
   },

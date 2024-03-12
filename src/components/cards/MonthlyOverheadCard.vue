@@ -2,20 +2,27 @@
 import { ref, computed } from 'vue';
 import { Metrics } from '@/models/Metrics';
 
-const cardTitle = 'Overhead';
-const FixedMonthlyExpenses = ref(2450);
-const DiscretionaryMonthlyExpenses = ref(548);
-const RemainingMonthlyExpenses = ref(874.49);
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+
+const currentMonth = new Date().getMonth();
+const cardTitle = `${monthNames[currentMonth]} Overhead`;
+const ExpectedIncome = ref(4300);
+const MandatoryExpenses = ref(2450);
+const DiscretionarySpending = ref(548);
+const Savings = computed(() => {
+  return ExpectedIncome.value - TotalMonthlyExpenses.value;
+});
 const TotalMonthlyExpenses = computed(() => {
-  return FixedMonthlyExpenses.value + DiscretionaryMonthlyExpenses.value;
+  return MandatoryExpenses.value + DiscretionarySpending.value;
 });
 const expenses = ref<Metrics>({
   items: [
-    { label: 'Due Before Next Payday', value: 430 },
-    { label: 'Total Monthly Expenses', value: TotalMonthlyExpenses.value },
-    { label: 'Fixed Monthly Expenses', value: FixedMonthlyExpenses.value },
-    { label: 'Discretionary Monthly Spending', value: DiscretionaryMonthlyExpenses.value },
-    { label: 'Remaining Monthly Expenses', value: RemainingMonthlyExpenses.value }
+    { label: 'Expected Income', value: ExpectedIncome.value   },   
+    { label: 'Mandatory Expenses', value: MandatoryExpenses.value },
+    { label: 'Discretionary Spending', value: DiscretionarySpending.value },
+    { label: 'Total Expenses', value: TotalMonthlyExpenses.value },
+    { label: 'Savings', value: Savings.value }
   ]
 });
 

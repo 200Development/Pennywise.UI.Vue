@@ -1,9 +1,14 @@
 <script setup lang='ts'>
 import { ref } from 'vue';
 import { Metrics } from '@/models/Metrics';
+import NextPayday from '@/components/NextPayday.vue';
 //import axios from 'axios';
 
-const cardTitle = 'Cash Flow Snapshot';
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+
+const currentMonth = new Date().getMonth();
+const cardTitle = `${monthNames[currentMonth]} Cash Flow`;
 const savings = ref<Metrics>({
   items: [
     { label: 'Last Paycheck', value: 3000 },
@@ -13,16 +18,6 @@ const savings = ref<Metrics>({
     { label: 'Disposable Income Until Next Paycheck', value: 100 },
   ]
 });
-const nextPayday = ref(new Date(2024,3,15));
-const formattedNextPayday = formatDate(nextPayday.value);
-
-
-function formatDate(date: Date) {
-  const formattedDate = date.toLocaleDateString('en-US');
-  const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'short' });
-  return `${dayOfWeek} ${formattedDate}`;
-};
-
 
 /* async function getSavingsMetrics() {
   try {
@@ -49,7 +44,7 @@ const formatCurrency = (amount: number) => {
     <v-card-text>
       <v-row justify="center" class="my-4 py-2" style="background-color: rgba(0,0,0,0.05);">
         <v-col cols="12" class="text-center">
-          Next Paycheck is due <strong>{{ formattedNextPayday }}</strong>
+          Next Paycheck is due <strong><NextPayday /></strong>
         </v-col>
       </v-row>
       <v-row v-for="(item, index) in savings.items" :key="index" no-gutters>
