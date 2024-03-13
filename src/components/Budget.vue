@@ -31,24 +31,25 @@
             <v-list>
               <v-list-item v-for="(fund, index) in funds" :key="index" class="py-1">
                 <v-list-item-content>
-                  <v-list-item-title class="subtitle-1">{{ fund.name }}</v-list-item-title>
+                  <v-list-item-title class="subtitle-1">{{ fund.name }}   <div :class="{'text-red-500': fund.isShort, 'text-green-500': !fund.isShort}" class="caption">
+                    {{ fund.isShort ? 'Shortfall: ' + formatCurrency(fund.targetAmount - fund.currentAmount) : 'On Track' }}
+                  </div></v-list-item-title>
                   <v-list-item-subtitle>
                     Target: {{ formatCurrency(fund.targetAmount) }},
                     Current: {{ formatCurrency(fund.currentAmount) }}
                   </v-list-item-subtitle>
+                 
                   <v-slider
                     v-model="fund.currentAmount"
                     :max="fund.targetAmount * 1.5"
                     :min="0"
-                    step="10"
+                    step="1"
                     class="mt-2"
                     thumb-label="always"
                     dense
                     @input="updateShortStatus(index)"
                   ></v-slider>
-                  <div :class="{'text-red-500': fund.isShort, 'text-green-500': !fund.isShort}" class="caption">
-                    {{ fund.isShort ? 'Shortfall: ' + formatCurrency(fund.targetAmount - fund.currentAmount) : 'On Track' }}
-                  </div>
+                
                 </v-list-item-content>
               </v-list-item>
             </v-list> 
