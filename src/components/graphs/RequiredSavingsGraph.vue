@@ -157,7 +157,7 @@ const chartOptions = computed(() => ({
 </script>
 
 <template>
-        <div id="chart">
+        <div>
             <apexchart type="line" height="400px" width="100%" :options="chartOptions" :series="series"></apexchart>
         </div>
 </template>

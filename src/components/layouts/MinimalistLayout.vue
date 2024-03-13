@@ -4,14 +4,14 @@ import MonthlyCashFlowCard from '@/components/cards/MonthlyCashFlowCard.vue';
 import MonthlyOverheadCard from '@/components/cards/MonthlyOverheadCard.vue';
 import MetricsCard from '@/components/cards/MetricsCard.vue';
 import SinkingFundsTable from '@/components/tables/SinkingFundsTable.vue';
-import RequiredSavingsGraph from '@/components/graphs/RequiredSavingsGraph.vue';
-import Budget from '@/components/Budget.vue';
-//import axios from 'axios';
 import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
 import CashFlowCard from '../cards/CashFlowCard.vue';
 import ExpensesTreemapCard from '../cards/ExpensesTreemapCard.vue';
 import NetWorthCard from '../cards/NetWorthCard.vue';
 import ExpectedSpendingCard from '../cards/ExpectedSpendingCard.vue';
+import RequiredSavingsCard from '../cards/RequiredSavingsCard.vue';
+import BudgetCard from '../cards/BudgetCard.vue';
+//import axios from 'axios';
 
 /* async function getUserData () {
     try {
@@ -59,10 +59,10 @@ import ExpectedSpendingCard from '../cards/ExpectedSpendingCard.vue';
                 <v-sheet class="pa-3" elevation="2">
                     <v-row>
                         <v-col cols="4">
-                            <RequiredSavingsGraph></RequiredSavingsGraph>
+                            <RequiredSavingsCard></RequiredSavingsCard>
                         </v-col>
                         <v-col cols="8">
-                            <Budget></Budget>
+                            <BudgetCard></BudgetCard>
                         </v-col>
                     </v-row>
                 </v-sheet>

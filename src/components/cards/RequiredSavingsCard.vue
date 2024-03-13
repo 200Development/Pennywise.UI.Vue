@@ -1,20 +1,15 @@
 <script setup lang="ts">
-import NetWorthGraph from '../graphs/NetWorthGraph.vue';
+import { ref } from 'vue';
+import RequiredSavingsGraph from '../graphs/RequiredSavingsGraph.vue';
 
-const cardTitle = "Net Worth";
+const cardTitle = ref('Required Savings');
 </script>
 
 <template>
     <v-card class="graphCard">
         <v-card-title class="text-center">{{ cardTitle }}</v-card-title>
         <v-card-text>
-            <NetWorthGraph></NetWorthGraph>
+            <RequiredSavingsGraph></RequiredSavingsGraph>
         </v-card-text>
     </v-card>
 </template>
-
-<style scoped>
-.graphCard {
-    height: 400px;
-}
-</style>
