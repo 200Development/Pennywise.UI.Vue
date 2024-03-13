@@ -5,7 +5,7 @@ const cardTitle = "Expenses Treemap";
 
 const options = ref({
   chart: {
-    height: 350,
+    height: 200,
     type: "treemap",
   },
   plotOptions: {

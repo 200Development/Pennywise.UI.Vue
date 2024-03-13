@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const cardTitle = "Cash Flow";
-
 const options = ref({
     chart: {
         type: 'bar',
-        height: 350
+        height: 200
     },
     plotOptions: {
         bar: {
@@ -43,24 +41,12 @@ const series = ref([{
     name: 'Cash Flow',
     data: [456.48, 1274.89, -672.91, -174.84, 843.82, 2014.79, 1285.12, -38.84, 439.03, 790.84, -337.65, 1684.06
     ]
-}])
-
-
+}]);
 </script>
 
 <template>
-    <v-card class="graphCard">
-        <v-card-title class="text-center">{{ cardTitle }}</v-card-title>
-        <v-card-text>
-            <div>
-                <apexchart :options="options" :series="series" width="100%"></apexchart>
-            </div>
-        </v-card-text>
-    </v-card>
+    <div>
+        <apexchart :options="options" :series="series" width="100%"></apexchart>
+    </div>
 </template>
 
-<style scoped>
-.graphCard {
-    height: 400px;
-}
-</style>

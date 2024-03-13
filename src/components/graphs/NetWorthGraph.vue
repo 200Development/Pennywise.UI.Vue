@@ -5,7 +5,7 @@ const cardTitle = "Net Worth";
 
 const options = ref({
     chart: {
-        height: 350,
+        height: 200,
         type: 'line',
         zoom: {
             enabled: false

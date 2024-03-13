@@ -5,13 +5,13 @@ import MonthlyOverheadCard from '@/components/cards/MonthlyOverheadCard.vue';
 import MetricsCard from '@/components/cards/MetricsCard.vue';
 import ExpensesTreemapGraph from '@/components/graphs/ExpensesTreemapGraph.vue';
 import NetWorthGraph from '@/components/graphs/NetWorthGraph.vue';
-import CashFlowGraph from '@/components/graphs/CashFlowGraph.vue';
 import ExpectedSpendingGraph from '@/components/graphs/ExpectedSpendingGraph.vue';
 import SinkingFundsTable from '@/components/tables/SinkingFundsTable.vue';
 import RequiredSavingsGraph from '@/components/graphs/RequiredSavingsGraph.vue';
 import Budget from '@/components/Budget.vue';
 //import axios from 'axios';
 import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
+import CashFlowCard from '../cards/CashFlowCard.vue';
 
 /* async function getUserData () {
     try {
@@ -32,7 +32,7 @@ import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
                             <NetWorthGraph></NetWorthGraph>
                         </v-col>
                         <v-col cols="4" class="graphCard">
-                            <CashFlowGraph></CashFlowGraph>
+                            <CashFlowCard></CashFlowCard>
                         </v-col>
                         <v-col cols="4" class="graphCard">
                             <ExpensesTreemapGraph></ExpensesTreemapGraph>
