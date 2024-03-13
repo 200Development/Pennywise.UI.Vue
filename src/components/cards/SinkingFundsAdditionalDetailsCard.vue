@@ -146,15 +146,6 @@ const chartOptions = computed(() => ({
 
 <template>
     <v-card v-if="fund">
-        <!--  <div class="d-flex flex-no-wrap justify-space-between">
-            <div>
-                <v-card-title class="text-h5">
-                    {{ fund.label }}
-                </v-card-title>
-                <v-card-subtitle>{{ fund.value }}</v-card-subtitle>
-            </div>
-        </div> -->
-
         <div id="chart">
             <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
         </div>
