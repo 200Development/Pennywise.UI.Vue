@@ -3,15 +3,15 @@ import AppFooter from '@/components/AppFooter.vue';
 import MonthlyCashFlowCard from '@/components/cards/MonthlyCashFlowCard.vue';
 import MonthlyOverheadCard from '@/components/cards/MonthlyOverheadCard.vue';
 import MetricsCard from '@/components/cards/MetricsCard.vue';
-import ExpensesTreemapGraph from '@/components/graphs/ExpensesTreemapGraph.vue';
-import NetWorthGraph from '@/components/graphs/NetWorthGraph.vue';
-import ExpectedSpendingGraph from '@/components/graphs/ExpectedSpendingGraph.vue';
 import SinkingFundsTable from '@/components/tables/SinkingFundsTable.vue';
 import RequiredSavingsGraph from '@/components/graphs/RequiredSavingsGraph.vue';
 import Budget from '@/components/Budget.vue';
 //import axios from 'axios';
 import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
 import CashFlowCard from '../cards/CashFlowCard.vue';
+import ExpensesTreemapCard from '../cards/ExpensesTreemapCard.vue';
+import NetWorthCard from '../cards/NetWorthCard.vue';
+import ExpectedSpendingCard from '../cards/ExpectedSpendingCard.vue';
 
 /* async function getUserData () {
     try {
@@ -29,13 +29,13 @@ import CashFlowCard from '../cards/CashFlowCard.vue';
                 <v-sheet class="pa-3" elevation="2">
                     <v-row justify="center">
                         <v-col cols="4" class="graphCard">
-                            <NetWorthGraph></NetWorthGraph>
+                            <NetWorthCard></NetWorthCard>
                         </v-col>
                         <v-col cols="4" class="graphCard">
                             <CashFlowCard></CashFlowCard>
                         </v-col>
                         <v-col cols="4" class="graphCard">
-                            <ExpensesTreemapGraph></ExpensesTreemapGraph>
+                            <ExpensesTreemapCard></ExpensesTreemapCard>
                         </v-col>
                     </v-row>
                 </v-sheet>
@@ -49,7 +49,7 @@ import CashFlowCard from '../cards/CashFlowCard.vue';
                 <v-sheet class="pa-3" elevation="2">
                     <v-row>
                         <v-col cols="6">
-                            <ExpectedSpendingGraph></ExpectedSpendingGraph>
+                            <ExpectedSpendingCard></ExpectedSpendingCard>
                         </v-col>
                         <v-col cols="6">
                             <SinkingFundsTable></SinkingFundsTable>

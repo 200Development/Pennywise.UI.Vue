@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, watch, onMounted } from 'vue';
 
+const emit = defineEmits(['updateCumulativeExpenses']);
+
+onMounted(() => {
+  // Emit the total cumulative expenses when the component mounts
+  // This ensures that the parent component receives the initial value.
+  emit('updateCumulativeExpenses', totalCumulativeExpenses.value);
+});
 
 const expensesData = [
   { day: 1, expense: 100, description: "Groceries" },
@@ -11,12 +18,9 @@ const expensesData = [
   { day: 25, expense: 100, description: "Miscellaneous" }
 ];
 
-const monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const currentMonth = new Date().getMonth(); 
-const currentMonthAbbreviation = computed(() => {
-  return monthAbbreviations[currentMonth];
+const totalCumulativeExpenses = computed(() => {
+  return cumulativeExpenses.value.at(-1); // Get the last element which is the total of cumulative expenses
 });
-
 
 // Calculate the cumulative expenses
 const cumulativeExpenses = computed(() => {
@@ -28,10 +32,6 @@ const cumulativeExpenses = computed(() => {
     }
     return acc;
   }, []);
-});
-
-const totalCumulativeExpenses = computed(() => {
-  return cumulativeExpenses.value.at(-1); // Get the last element which is the total of cumulative expenses
 });
 
 // Update series data with cumulative expenses
@@ -87,12 +87,7 @@ const options = ref({
 </script>
 
 <template>
-  <v-card class="graphCard">
-    <v-card-title class="text-center">Expected Spending for {{ currentMonthAbbreviation }} is ${{ totalCumulativeExpenses?.toFixed() }}</v-card-title>
-    <v-card-text>
-      <div>
-        <apexchart :options="options" :series="series" width="100%" height="350"></apexchart>
-      </div>
-    </v-card-text>
-  </v-card>
+  <div>
+    <apexchart :options="options" :series="series" width="100%" height="350"></apexchart>
+  </div>
 </template>

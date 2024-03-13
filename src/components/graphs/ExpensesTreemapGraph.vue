@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const cardTitle = "Expenses Treemap";
-
 const options = ref({
   chart: {
     height: 200,
@@ -74,23 +72,10 @@ const series = ref([
     ],
   },
 ]);
-
-
 </script>
 
 <template>
-  <v-card class="graphCard">
-    <v-card-title class="text-center">{{ cardTitle }}</v-card-title>
-    <v-card-text>
-      <div>
-        <apexchart :options="options" type="treemap" width="100%" :series="series"></apexchart>
-      </div>
-    </v-card-text>
-  </v-card>
+  <div>
+    <apexchart :options="options" type="treemap" width="100%" :series="series"></apexchart>
+  </div>
 </template>
-
-<style scoped>
-.graphCard {
-  height: 400px;
-}
-</style>
