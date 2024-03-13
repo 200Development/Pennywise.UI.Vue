@@ -38,9 +38,6 @@ import SinkingFundsCard from '@/components/cards/SinkingFundsCard.vue';
                             <ExpensesTreemapGraph></ExpensesTreemapGraph>
                         </v-col>
                     </v-row>
-                    <v-row class="graphButtonRow">
-                        <v-btn elevation="2">Button</v-btn>
-                    </v-row>
                 </v-sheet>
                 <v-sheet class="pa-3" elevation="2">
                     <v-row justify="center">
